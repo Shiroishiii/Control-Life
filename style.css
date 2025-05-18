@@ -1,0 +1,75 @@
+body {
+    background-image: url('Background/Cidade-BG2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #fff;
+    font-family: "MyFont";
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 120px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url("Font/PixeloidSans-mLxMm.ttf") format("truetype");
+}
+
+.fundo-central {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    max-width: 600px;
+    width: 100%;
+    margin: 120px auto 40px auto;
+    min-height: 80vh;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    padding: 15px 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.767);
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+main {
+    width: 100%;
+    text-align: center;
+    flex: 1;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+}
+
+title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.life-highlight {
+    color: rgb(255, 183, 0);
+}
