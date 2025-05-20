@@ -13,27 +13,26 @@
             <ul>
                 <li><a href="index.html">Início</a></li>
                 <li><a href="about.html">Sobre</a></li>
-                <li><a href="index.html">Login/Registre-se</a></li>
+                <li><a href="login.html">Login/Registrar-se</a></li>
             </ul>
         </nav>
     </header>
     <div class="fundo-central">
+        <h2>Crie seu Perfil</h2>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <label for="username">Nome de Usuário</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label>Escolha sua imagem de avatar:</label><br>
+            <input type="file" id="avatar" name="avatar" accept="image/*" required><br>
         
-    <h1>Login</h1>
-    <form action="index.html" method="post">
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" name="username" required>
-
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
-
-        <button type="submit">Entrar</button>
-        <p>Não tem uma conta? <a href="register.html" class="menu-link">Registre-se</a></p>
-    </form>
+            <button type="submit">Salvar perfil</button>
+        </form>
     </div>
     <footer>
         <p>&copy; 2025 Control Life. Todos os direitos reservados.</p>
         <p><a href="#home" class="menu-link">Voltar ao topo</a></p>
     </footer>
+<script src="script.js"></script>
 </body>
 </html>
