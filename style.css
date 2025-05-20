@@ -71,7 +71,7 @@ title {
 }
 
 .life-highlight {
-    color: #00ffcc;
+    color: #ffc400  ;
 }
 
 nav ul {
@@ -122,25 +122,25 @@ textarea {
     max-width: 320px;
     padding: 10px 16px;
     margin: 10px 0 18px 0;
-    border: 3px solid #00ffcc;
+    border: 3px solid #ffc400;
     background: rgb(255, 255, 255);
     border-radius: 10px;
     color: #111;
     font-size: 1.1rem;
     font-family: 'MyFont',monospace;
-    box-shadow: 0 0 8px #00ffcc, 0 0 2px #fff inset;
+    box-shadow: 0 0 8px #ffc400, 0 0 2px #fff inset;
     outline: none;
     transition: border 0.2s, box-shadow 0.2s, background 0.3s;
-    text-shadow: 0 0 2px #000, 0 0 8px #00ffcc;
+    text-shadow: 0 0 2px #000, 0 0 8px #ffc400;
     animation: input-glow 1s infinite alternate;
 }
 
 @keyframes input-glow {
     0% {
-        box-shadow: 0 0 8px #00ffcc, 0 0 2px #fff inset;
+        box-shadow: 0 0 8px #ffc400, 0 0 2px #fff inset;
     }
     100% {
-        box-shadow: 0 0 16px #00ffcc, 0 0 8px #fff inset;
+        box-shadow: 0 0 16px #ffc400, 0 0 8px #fff inset;
     }
 }
 
@@ -148,17 +148,17 @@ input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    border: 3px solid #00e1ff;
+    border: 3px solid #fffb00;
     background: rgb(255, 255, 255);
-    box-shadow: 0 0 16px #00e1ff, 0 0 8px #fff inset;
+    box-shadow: 0 0 16px #fffb00, 0 0 8px #fff inset;
     color: #111;
 }
 
 button,
 input[type="submit"] {
-    background: linear-gradient(90deg, #00ffcc 60%, #09b13b 100%);
+    background: linear-gradient(90deg, #ffc400 60%, #ff8c00 100%);
     color: #222;
-    border: 3px solid #00e1ff;
+    border: 3px solid #fffb00;
     border-radius: 10px;
     padding: 10px 32px;
     font-size: 1.1rem;
@@ -166,21 +166,21 @@ input[type="submit"] {
     font-weight: bold;
     cursor: pointer;
     margin-top: 12px;
-    box-shadow: 0 0 8px #00ffcc, 0 0 2px #fff inset;
-    text-shadow: 0 0 2px #fff, 0 0 8px #00ffcc;
+    box-shadow: 0 0 8px #ffc400, 0 0 2px #fff inset;
+    text-shadow: 0 0 2px #fff, 0 0 8px #ffc400;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
     animation: btn-glow 1s infinite alternate;
 }
 
 @keyframes btn-glow {
-    0% { box-shadow: 0 0 8px #00ffcc, 0 0 2px #fff inset; }
-    100% { box-shadow: 0 0 16px #09b13b, 0 0 8px #fff inset; }
+    0% { box-shadow: 0 0 8px #ffc400, 0 0 2px #fff inset; }
+    100% { box-shadow: 0 0 16px #ff8c00, 0 0 8px #fff inset; }
 }
 
 button:hover,
 input[type="submit"]:hover {
-    background: linear-gradient(90deg, #09b13b 60%, #00ffcc 100%);
+    background: linear-gradient(90deg, #ff8c00 60%, #ffc400 100%);
     color: #fff;
-    border: 3px solid #09b13b;
-    box-shadow: 0 0 24px #09b13b, 0 0 12px #fff inset;
+    border: 3px solid #ff8c00;
+    box-shadow: 0 0 24px #ff8c00, 0 0 12px #fff inset;
 } 
