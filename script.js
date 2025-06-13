@@ -1,23 +1,19 @@
 inicializar()
 
-
-
-
 let usuario = {
     username: '',
     email: '',
     password: ''
 }
 function cadastrar() {
-    usuario.nome = document.getElementById('Cnome').value
-    usuario.email = document.getElementById('Cemail').value
-    usuario.senha = document.getElementById('Csenha').value
+    usuario.nome = document.getElementById('cadNome').value
+    usuario.email = document.getElementById('cadEmail').value
+    usuario.senha = document.getElementById('cadSenha').value
     alert("Cadastrado com sucesso!! :D")
 
     console.log(usuario)
 
-    mostrarLogin()
-
+    window.location.href = login.html
 }
 
 function logar() {
