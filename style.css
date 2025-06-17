@@ -407,3 +407,36 @@ input[type="submit"]:hover {
     cursor: pointer;
     color: #fff;
 }
+
+/* .fotoPerfil{
+
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 30px;
+    border-radius: 100%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    max-width: 200px;
+    width: 100%;
+    margin: 120px auto 40px auto;
+    min-height: 250px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+#fotoTeste{
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 30px;
+    border-radius: 100%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    max-width: 200px;
+    width: 100%;
+    margin: 120px auto 40px auto;
+    min-height: 250px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

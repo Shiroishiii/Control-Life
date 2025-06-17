@@ -18,13 +18,15 @@
         </nav>
     </header>
     <div class="fundo-central">
-        <h2>Crie seu Perfil</h2>
+        <input type="file" id="avatar" name="avatar" accept="image/*" required><br>
+        <div class="fotoPerfil">
+           <img src="blue.jpg" id="fotoTeste"> 
+        </div>
+        <h2>Julio Gaspareto</h2>
         <form action="#" method="post" enctype="multipart/form-data">
-            <label for="username">Nome de Usuário</label>
+            <label for="username">julio@pauComEpa</label>
             <input type="text" id="username" name="username" required><br><br>
 
-            <label>Escolha sua imagem de avatar:</label><br>
-            <input type="file" id="avatar" name="avatar" accept="image/*" required><br>
         
             <button type="submit">Salvar perfil</button>
         </form>
