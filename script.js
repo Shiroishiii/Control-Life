@@ -33,18 +33,11 @@ function login(){
     }
 }
 
+function Adicionar(){
+    window.location.href = "addhabits.html"
+}
 
-function addHabit() {
-    const habitName = document.getElementById('habit-name').value;
-    const habitDescription = document.getElementById('habit-description').value;
 
-    if (habitName && habitDescription) {
-        const habits = JSON.parse(localStorage.getItem('habits')) || [];
-        habits.push({ name: habitName, description: habitDescription });
-        localStorage.setItem('habits', JSON.stringify(habits));
-        alert("Hábito adicionado com sucesso!");
-        document.getElementById('habit-form').reset();
-    } else {
-        alert("Por favor, preencha todos os campos.");
-    }
+function addHabit(){
+    
 }
