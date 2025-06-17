@@ -405,7 +405,17 @@ input[type="submit"]:hover {
 .icone {
     display: inline-block;
     cursor: pointer;
-    color: #fff;
+    color: #ffffff;
+}
+.estilizar, a{
+    color: yellow;
+    text-decoration: none;
+    text-align: initial;
+}
+.estilizarConfig{
+    text-align: center;
+    color: yellow;
+
 }
 
 /* .fotoPerfil{
