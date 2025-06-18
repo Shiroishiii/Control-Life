@@ -450,3 +450,18 @@ input[type="submit"]:hover {
     justify-content: center;
     align-items: center;
 }
+
+#graficoPessoal{
+    background-color: #222;
+}
+
+.xpContainer{
+    width: 100;
+}
+
+.xpBar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient( to right, #ffc400, #ff8c00);
+    transition: width 0.5s ease-in-out;
+}
