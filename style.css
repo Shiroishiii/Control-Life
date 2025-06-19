@@ -439,39 +439,53 @@ input[type="submit"]:hover {
     flex-wrap: wrap-reverse;
 
 }
-
-/* .fotoPerfil{
-
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 30px;
-    border-radius: 100%;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-    max-width: 200px;
-    width: 100%;
-    margin: 120px auto 40px auto;
-    min-height: 250px;
+/* Negocio pro perfil */
+.box{
     display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
-
-#fotoTeste{
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 30px;
-    border-radius: 100%;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-    max-width: 200px;
-    width: 100%;
-    margin: 120px auto 40px auto;
-    min-height: 250px;
-    display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+.w-100{
+    width: 100%;
+}
+
+.h-100{
+    height: 100%;
+}
+
+/* Negocio bom */
+#form-form{
+    & .image-uploud{
+        width: 200px;
+        height: 200px;
+        border: 4px solid yellow;
+        border-radius: 100%;
+        position: relative;
+        box-shadow: 2px 3px 12px #00000060;
+        overflow: hidden;
+    }
+
+    & .image-uploud img{
+        object-fit: cover;
+    }
+
+    & .image-uploud{
+        position: absolute;
+        margin: 0 auto;
+        font-size: 50px;
+        color: yellow;
+    }
+
+    & #image-field{
+        position: flex;
+        margin: 0 auto;
+        width: 25px;
+        height: 25px;
+        opacity: 0;
+    }
+
 
 #graficoPessoal{
     background-color: #222;
