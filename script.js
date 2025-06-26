@@ -33,12 +33,3 @@ function login(){
     }
 }
 
-function Adicionar(){
-    window.location.href = "addhabits.html"
-}
-
-
-function addHabit(){
-    
-}
-
