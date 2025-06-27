@@ -21,22 +21,18 @@
     </header>
 
     
-    <div class="fundo-central">  
-        <main class="w-100 box">
-            <div class="w-100 box"
-                <form class="box" id="form-form">
-                    <div class="image-uploud box">
-                        <img src="" class="w-100 h-100">
-                        <i class="bi bi-brush"></i>
-                        <input id="image-field" type="file">
-                    </div>
-                   
-                </form>
+</main>
+    <div class="fundo-central">
+        <div class="containerPreview">
+            <div id="uploadPerfil">
+                <input type="file" id="fotoPerfil" accept="image/*">
+                <svg id="iconEditar" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ffffff" viewBox="0 0 256 256">
+                    <path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"></path>
+                </svg>
             </div>
-        </main>
-        
-        <br>
-     <h2>Julio Gaspareto</h2>
+        </div>
+        <img src="" id="preview" alt="">  
+        <h2>Julio Gaspareto</h2>
         <form action="#" method="post" enctype="multipart/form-data">
             <label for="username">julio@pauComEpa</label>
             <input type="text" id="username" name="username" required><br><br>
@@ -45,12 +41,11 @@
             <button type="button">Salvar perfil</button>
         </form>
     </div>
-       
-    </div>
+</main>
     <footer>
         <p>&copy; 2025 Control Life. Todos os direitos reservados.</p>
         <p><a href="#home" class="menu-link">Voltar ao topo</a></p>
     </footer>
-<script src="script.js"></script>
+<script src="profile.js"></script>
 </body>
 </html>
