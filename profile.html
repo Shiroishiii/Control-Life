@@ -19,38 +19,43 @@
             </ul>
         </nav>
     </header>
-
-    
     <div class="fundo-central">  
-        <main class="w-100 box">
-            <div class="w-100 box"
-                <form class="box" id="form-form">
-                    <div class="image-uploud box">
-                        <img src="" class="w-100 h-100">
-                        <i class="bi bi-brush"></i>
-                        <input id="image-field" type="file">
-                    </div>
-                   
-                </form>
+        <div id="containerFotoProfile">
+            <img id="imageUsuarioProfile" src="semFoto.png">
+            <br>
+            <div id="bordaDatrocaImg">
+                <input id="colocarImagem" type="file"">
+                 <img id="imagemfds"  src="lapis.jpg" alt="40px"> 
+                <label for="file" id="loguihoTroca"></label>
             </div>
-        </main>
-        
-        <br>
-     <h2>Julio Gaspareto</h2>
-        <form action="#" method="post" enctype="multipart/form-data">
-            <label for="username">julio@pauComEpa</label>
-            <input type="text" id="username" name="username" required><br><br>
+        </div>
 
-        
-            <button type="button">Salvar perfil</button>
-        </form>
     </div>
-       
+        <div id="infoDoUser">
+            <label for="">pode ser</label>
+             <label for="">issoai</label>
+            <label for=""> sla oq</label>
+        </div>
+
+        <!-- codigo para colocar a imagem -->
+         <script>
+            var file = document.getElementById("colocarImagem")
+            var img = document.getElementById("imageUsuarioProfile")
+                file.addEventListener("change",(e)=>{
+                 img.src = URL.createObjectURL(e.target.files[0])
+                })
+                
+         </script>
+        
+    </div>
+    <!-- Abaixo do fundo Central -->
+    <div>
+      <h1>dafsefs</h1>
     </div>
     <footer>
         <p>&copy; 2025 Control Life. Todos os direitos reservados.</p>
         <p><a href="#home" class="menu-link">Voltar ao topo</a></p>
     </footer>
-<script src="script.js"></script>
+<script src="profile.js"></script>
 </body>
 </html>

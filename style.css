@@ -456,7 +456,7 @@ input[type="submit"]:hover {
 }
 
 /* Negocio bom */
-#form-form
+/* #form-form
     & .image-uploud{
         width: 200px;
         height: 200px;
@@ -484,7 +484,7 @@ input[type="submit"]:hover {
         width: 25px;
         height: 25px;
         opacity: 0;
-    }
+    } */
 
 
 #graficoPessoal{
@@ -505,4 +505,46 @@ input[type="submit"]:hover {
     color: white;
     background-color: rgba(30, 30, 76, 0.626);
 }
+
+#containerFotoProfile{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+#imageUsuarioProfile{
+        width: 200px;
+        height: 200px;
+        border: 4px solid yellow;
+        border-radius: 100%;
+        position: relative;
+        box-shadow: 2px 3px 12px #00000060;
+        overflow: hidden;
+        
+}
+#bordaDatrocaImg{
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid yellow;
+    border-radius: 100%;
+    position: relative;
+    box-shadow: 2px 3px 12px #00000060;
+    overflow: hidden;   
+}
+
+.imagemfds{
+    width: 40px;
+    height: 40px;
+    size: 40px;
+}
+#span1{
+    
+    background:url(../images/Sample_User_Icon.png);
+    padding-left:30px;
+
+}
+
 
