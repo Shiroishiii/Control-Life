@@ -439,60 +439,21 @@ input[type="submit"]:hover {
     flex-wrap: wrap-reverse;
 
 }
-/* Negocio pro perfil */
-.box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.w-100{
-    width: 100%;
-}
-
-.h-100{
-    height: 100%;
-}
-
-/* Negocio bom */
-#form-form
-    & .image-uploud{
-        width: 200px;
-        height: 200px;
-        border: 4px solid yellow;
-        border-radius: 100%;
-        position: relative;
-        box-shadow: 2px 3px 12px #00000060;
-        overflow: hidden;
-    }
-
-    & .image-uploud img{
-        object-fit: cover;
-    }
-
-    & .image-uploud{
-        position: absolute;
-        margin: 0 auto;
-        font-size: 50px;
-        color: yellow;
-    }
-
-    & #image-field{
-        position: flex;
-        margin: 0 auto;
-        width: 25px;
-        height: 25px;
-        opacity: 0;
-    }
-
 
 #graficoPessoal{
     background-color: #222;
 }
 
 .xpContainer{
-    width: 100;
+    width: 100%;
+    max-width: 400px;
+    height: 30px;
+    background-color: #222;
+    border: 2px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin: 0px auto;
 }
 
 .xpBar {
@@ -501,8 +462,41 @@ input[type="submit"]:hover {
     background: linear-gradient( to right, #ffc400, #ff8c00);
     transition: width 0.5s ease-in-out;
 }
-#habit-frequency{
-    color: white;
-    background-color: rgba(30, 30, 76, 0.626);
+
+.xpText{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    pointer-events: none;
 }
 
+#preview {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid #ff8c00;
+}
+
+#fotoPerfil{
+    display: none;
+}
+
+.uploadPerfil {
+    display: flex;
+}
+
+#iconEditar {
+    cursor: pointer;
+}
+
+.containerPreview {
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+}
