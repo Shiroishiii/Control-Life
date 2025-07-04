@@ -13,56 +13,36 @@ function Adicionar() {
 
 
 function addHabit() {
+  let nomeHab = document.getElementById("habit-name").value.trim();
+  let descHab = document.getElementById("habit-description").value.trim();
+  let metaHab = document.getElementById("habit-goal").value.trim();
+  let notasHab = document.getElementById("habit-notes").value.trim();
+  let corHab = document.getElementById("habit-color").value.trim();
+
+  // Verificação de campos vazios
+  if (nomeHab === "" || descHab === "" || metaHab === "" || notasHab === "" || corHab === "") {
+    alert('Por favor, preencha todos os campos!');
+    return; 
+  } else {
     const habit = {
-        usuario: "Informações do úsuario logado",
-        NomeDoHábito: document.getElementById("habit-name").value,
-        Descrição: document.getElementById("habit-description").value,
-        Frequência: document.getElementById("habit-frequency").value,
-        DataDeInício: document.getElementById("habit-start-date").value,
-        DataDeTérmino: document.getElementById("habit-end-date").value,
-        Meta: document.getElementById("habit-goal").value,
-        Notas: document.getElementById("habit-notes").value,
-        Notas: document.getElementById("habit-reminder").value,
-        Cor: document.getElementById("habit-color").value,
-        Adicionar: document.getElementById("add-habit-btn").value,
+      usuario: "Informações do usuário logado", 
+      NomeDoHábito: nomeHab,
+      Descrição: descHab,
+      Meta: metaHab,
+      Notas: notasHab,
+      Cor: corHab,
+    };
 
-
-    }
     habitos.push(habit);
     console.log(habitos);
 
+    // Salvando no localStorage
     localStorage.setItem("habitos", JSON.stringify(habitos));
 
-    
-
-
-    window.location.href = "habits.html"
-}
-
-function verificarCampos() {
-    const formulario = document.getElementById("habit-form");
-    const campos = formulario.querySelectorAll(".campo");
-    let todosPreenchidos = true;
-  
-    campos.forEach(campo => {
-      const input = campo.querySelector("input");
-      const erro = campo.querySelector(".erro");
-  
-      if (!input.value.trim()) {
-        todosPreenchidos = false;
-        erro.textContent = "Este campo é obrigatório.";
-        input.style.border = "2px solid red";
-      } else {
-        erro.textContent = "";
-        input.style.border = "";
-      }
-    });
-  
-    if (todosPreenchidos) {
-      window.location.href = "outra-pagina.html";
-    }
+    // Redirecionando para a página de hábitos
+    window.location.href = "habits.html";
   }
-  
+}
 
 
 
@@ -74,3 +54,4 @@ function addSuggestedHabit(habit) {
 function MeusHabitos(){
 
 }
+
