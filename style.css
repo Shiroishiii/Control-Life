@@ -500,3 +500,22 @@ input[type="submit"]:hover {
     flex-direction: row;
     margin-left: 100px;
 }
+
+.imagemTexto{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start; /* alinha no topo da imagem */
+    gap: 10px;              
+
+}
+.imagemTexto img{
+  max-width: 250px;     /* ajuste conforme necessário */
+  height: 200px;
+  width: 600px;
+  margin: 0;
+  padding: 10px;
+}
+.sidebarOptions a{
+color: #ffc400;
+text-decoration-line:none;
+}
