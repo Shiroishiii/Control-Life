@@ -118,9 +118,9 @@ textarea {
     padding: 10px 16px;
     margin: 10px 0 18px 0;
     border: 3px solid #ffc400;
-    background: rgb(255, 255, 255);
+    background: none;
     border-radius: 10px;
-    color: #111;
+    color: #ffffff;
     font-size: 1.1rem;
     font-family: 'MyFont',monospace;
     box-shadow: 0 0 8px #ffc400, 0 0 2px #fff inset;
@@ -144,9 +144,9 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
     border: 3px solid #fffb00;
-    background: rgb(255, 255, 255);
+    background: none;
     box-shadow: 0 0 16px #fffb00, 0 0 8px #fff inset;
-    color: #111;
+    color: #ffffff;
 }
 
 button,
