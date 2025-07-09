@@ -365,6 +365,8 @@ input[type="submit"]:hover {
     left: 0px;
     top: 0;
     width: 250px;
+    padding-top: 50px;
+    z-index: 100000;
     height: 100vh;
     border-radius: 0 10px 10px 0;
     color: #fff;
@@ -393,9 +395,6 @@ input[type="submit"]:hover {
 
 .minimizado {
     display: inline-block;
-    position: fixed;
-    left: 0px;
-    top: 60px;
 }
 
 .minimizado:hover .sidebar {
@@ -405,6 +404,9 @@ input[type="submit"]:hover {
 .icone {
     display: inline-block;
     cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 45px;
     color: #ffffff;
 }
 .estilizar{
