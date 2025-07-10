@@ -12,7 +12,7 @@
          <nav>
             <ul>
                 <li><a href="index.html">Início/Sobre</a></li>
-                <li><a href="index.html">Login/Registre-se</a></li>
+                <li><a href="login.html">Login/Registre-se</a></li>
             </ul>
         </nav>
     </header>
@@ -20,11 +20,16 @@
         
     <h1>Login</h1>
     <form action="index.html" method="post">
-        <label for="username">Usuário:</label>
-        <input type="text" id="logNome" name="username" required><br>
+        <div>
+            <label for="username">Usuário:</label>
+            <input type="text" id="logNome" name="username" required>
 
-        <label for="password">Senha:</label>
-        <input type="password" id="logSenha" name="password" required>
+        </div>
+        <div>
+            <label for="password">Senha:</label>
+            <input type="password" id="logSenha" name="password" required>
+
+        </div>
 
         <button onclick="login()" type="button">Entrar</button>
         <p>Não tem uma conta? <a href="register.html" class="menu-link">Registre-se</a></p>

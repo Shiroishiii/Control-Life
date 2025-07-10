@@ -33,3 +33,18 @@ function login(){
     }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const usuarioSalvo = JSON.parse(localStorage.getItem('usuarios'));
+
+    if (usuarioSalvo) {
+      document.getElementById("perfilNome").textContent = usuarioSalvo.nome;
+      document.getElementById("perfilEmail").textContent = usuarioSalvo.email;
+    }
+  });
+
+  function salvarPerfil(){
+    window.location.href = "mainMenu.html"
+  }
+  function excluirConta(){
+    window.location.href = "register.html"
+  }
