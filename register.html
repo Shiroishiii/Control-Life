@@ -12,15 +12,21 @@
     </header>
     <div class="fundo-central">
         <h1>Registre-se</h1>
+        
         <form action="index.html" method="post">
-            <label for="username">Usuário:</label>
-            <input type="text" id="cadNome" name="username" required><br>
+            <div>
+                <label for="username">Usuário:</label>
+                <input type="text" id="cadNome" name="username" required><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="cadEmail" name="email" required><br>
-
-            <label for="password">Senha:</label>
-            <input type="password" id="cadSenha" name="password" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="cadEmail" name="email" required>
+            </div>
+            <div>
+                <label for="password">Senha:</label>
+                <input type="password" id="cadSenha" name="password" required>
+            </div>
 
             <button onclick="cadastro()" type="button">Registrar</button>
             <p>Já tem uma conta? <a href="Login.html" class="menu-link">Faça login</a></p>
