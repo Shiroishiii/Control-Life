@@ -525,3 +525,28 @@ text-decoration-line:none;
 .user{
     font-size: 27px;
 }
+.containerText-Left{
+width: 270px;
+height: 250px;
+border: 1.8px, solid, yellow;
+box-sizing: content-box;
+padding: 10px;
+position: relative;
+border-radius: 8px;
+
+}
+.containerText-Right{
+    width: 350px;
+    height: 850px;
+    border: 1px, solid, white;
+    box-sizing: content-box;
+    padding: 10px;
+    position: relative;
+    border-radius: 8px;
+
+}
+#menudomenu{
+display: flex;
+gap: 220px;
+
+}
