@@ -8,7 +8,7 @@ const habitos = JSON.parse(localStorage.getItem('habitos')) || []
 
 function Adicionar() {
     window.location.href = "addhabits.html"
-    localStorage.BeberAgua = "Beber Água"
+    // localStorage.BeberAgua = "Beber Água"
 }
 
 
@@ -51,7 +51,7 @@ function addSuggestedHabit(habit) {
     window.location.href = "addhabits.html"
 }
 
-function MeusHabitos(){
-
+function MeusHábitos(){
+ window.location.href="MeusHabitos.html"
 }
 

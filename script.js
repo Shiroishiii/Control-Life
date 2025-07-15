@@ -46,5 +46,15 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "mainMenu.html"
   }
   function excluirConta(){
-    window.location.href = "register.html"
+    document.getElementById('excluirConta').addEventListener('click',() => {
+      const confirmar = confirm("Tem certeza que deseja excluir sua conta?");
+      if (confirmar) {
+        localStorage.removeItem('usuarios');
+        localStorage.removeItem('fotoPerfil');
+  
+        alert("Conta excluída");
+        window.location.href = "login.html";
+      }
+    });
   }
+  excluirConta();
