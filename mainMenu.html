@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Control Life</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -19,7 +20,7 @@
               <p class="element"><a href="mainMenu.html">Menu Principal </a></p>
               <p class="element"> <a href="habits.html">Hábitos</a></p>
               <p class="element"> <a href="statitiscs.html">Progresso</a></p>
-              <p class="element"><a href="statitiscs.html">Metas</a></p>
+              <p class="element"><a href="meusHabitos.html">Metas</a></p>
               <p class="element"><a href="profile.html">Perfil </a></p> 
               <p class="element"> <a href="indexInicio.html">Inicio/Sobre</a></p>
             </div>
@@ -28,10 +29,50 @@
     </header>
     <div class="fundo-central" >
       <h2>Menu Principal</h2>
-        <h3>Recursos</h3>
         <section id="menudomenu">
           <div class="containerText-Left">
-            <p>JULITO SEMPRE GAY</p>
+            <div><h3>statistics</h3></div>
+            
+            <div>
+              <canvas id="graficoPessoal" width="300px" height="250px">
+                  <script>
+                      Chart.defaults.font.family = 'MyFont'
+                      const ctx = document.getElementById('graficoPessoal').getContext('2d');
+                
+                  new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                      labels: ['Água 💧', 'Estudo 📚', 'Exercício 🏃‍♂️', 'Sono 😴'],
+                      datasets: [{
+                        label: 'Progresso dos hábitos',
+                        data: [80, 60, 40, 90,],
+                        backgroundColor: ['#11FF00', '#FFF200', '#0000FF', '#FF0000'],
+                        borderColor:'#fff',
+                        borderWidth:1,
+                        borderRadius:10,
+                        barThickness:12
+                      }]
+                    },
+                    options: {
+                      indexAxis : 'y',
+                        scales: {
+                        x: {
+                          beginAtZero: true,
+                          max: 100,
+                          ticks:{color: '#fff'},
+                          grid:{color: '#444'}
+
+                      },
+                      y:{
+                          ticks:{color:'#fff'},
+                          grid:{color: '#444'}
+                      },
+                      }
+                      }
+                    });
+                  </script>
+              </canvas>
+            </div>          
           </div>           
           <div class="containerText-Right">
               <p>JULITO SEMPRE GAY</p>
