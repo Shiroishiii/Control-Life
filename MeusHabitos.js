@@ -7,7 +7,7 @@ function mostrarCards(){
         document.getElementById("CardsContainer").innerHTML +=`
         <div id="Card">
             <h3>${habitos[i].NomeDoHábito}</h3>
-            <p>${habitos[i].Descrição}</p>
+            <p>Descrição : ${habitos[i].Descrição}</p>
             <p>Meta : ${habitos[i].Meta}</p>
             <p>Notas : ${habitos[i].Notas}</p>
     
