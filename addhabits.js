@@ -30,6 +30,9 @@ function addHabit() {
       Descrição: descHab,
       Meta: metaHab,
       Notas: notasHab,
+      percentualConclusao: 0,
+      progresso: 0,
+      id: Date.now(),
       Cor: corHab,
     };
 
