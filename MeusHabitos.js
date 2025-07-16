@@ -1,3 +1,4 @@
+
 let contador = 0
 if(localStorage.getItem("contador")){ //Verifica se ja existe algum valor salvo
     contador = parseInt(localStorage.getItem("contador")) //parseInt converte de string para numero
@@ -10,12 +11,14 @@ function add(id){
     for( let i = 0; i < habitos.length; i++){
         if(habitos[i].id == id){
             habitos[i].progresso++
-            habitos[i].percentualConclusao = (progresso/meta) * 100
+            habitos[i].percentualConclusao = (habitos[i].progresso/ habitos[i].meta) * 100
+            console.log(habitos[i])
         }
         console.log(habitos[i].progresso)
         document.getElementById(habitos[i].id).innerHTML = `progresso: ${habitos[i].progresso}`
     }
-localStorage.setItem('habitos',JSON.stringify(habitos))
+    localStorage.setItem('habitos',JSON.stringify(habitos))
+    atualizarDadosGrafico()
     // encontrar o hábito que tem esse id
     // habitos[i].id == id
     // progresso++
@@ -37,10 +40,10 @@ function mostrarCards(){
     for(let i=0; i < habitos.length; i++){
         document.getElementById("CardsContainer").innerHTML +=`
         <div class="card">
-            <h3>${habitos[i].NomeDoHábito}</h3>
-            <p>Descrição : ${habitos[i].Descrição}</p>
-            <p>Meta : ${habitos[i].Meta}</p>
-            <p>Notas : ${habitos[i].Notas}</p>
+            <h3>${habitos[i].nomeDoHabito}</h3>
+            <p>Descrição : ${habitos[i].descricao}</p>
+            <p>Meta : ${habitos[i].meta}</p>
+            <p>Notas : ${habitos[i].notas}</p>
             <button onclick="add(${habitos[i].id})">+</button>
             <p id="${habitos[i].id}">progresso: ${habitos[i].progresso}</p>
             
@@ -52,7 +55,27 @@ function mostrarCards(){
 
 mostrarCards()
 
+function atualizarDadosGrafico(){
 
+    const habitos = JSON.parse(localStorage.getItem('habitos')) || []
+    const nomeDoHabito = []
+    const percentualConclusao =  []
+    const cor =  []
+  
+    for(let i = 0; i<habitos.length; i++){
+      nomeDoHabito.push(habitos[i].nomeDoHabito)
+      percentualConclusao.push(habitos[i].percentualConclusao)
+      cor.push(habitos[i].cor)
+    }
+  
+    localStorage.setItem('nomeDoHabito',JSON.stringify(nomeDoHabito))
+    localStorage.setItem('percentualConclusao',JSON.stringify(percentualConclusao))
+    localStorage.setItem('cor',JSON.stringify(cor))
+    
+  
+    
+    console.log(habitos, nomeDoHabito, percentualConclusao, cor) 
+  }
 
 // document.getElementById('diasfeitos').value
 // document.getElementById('metadias').value

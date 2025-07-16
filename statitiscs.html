@@ -36,9 +36,10 @@
             <div>
                 <canvas id="graficoPessoal" width="500px" height="500px">
                     <script>
-                      let habitos = ['Água 💧', 'Estudo 📚', 'Exercício 🏃‍♂️', 'Sono 😴', "comer frutas"]
-                      let progressos = [80, 60, 40, 90, 44]
-                      let cores = ['#11FF00', '#FFF200', '#0000FF', '#FF0000', "#ff8833"]
+                      const nomeDoHabito = JSON.parse(localStorage.getItem('nomeDoHabito')) || []
+                      const percentualConclusao = JSON.parse(localStorage.getItem('percentualConclusao')) || []
+                      const cor = JSON.parse(localStorage.getItem('cor')) || []
+
 
                         Chart.defaults.font.family = 'MyFont'
                         const ctx = document.getElementById('graficoPessoal').getContext('2d');
@@ -46,11 +47,11 @@
                     new Chart(ctx, {
                       type: 'bar',
                       data: {
-                        labels: habitos,
+                        labels: nomeDoHabito,
                         datasets: [{
                           label: 'Progresso dos hábitos',
-                          data: progressos,
-                          backgroundColor: cores,
+                          data: percentualConclusao,
+                          backgroundColor: cor,
                           borderColor:'#fff',
                           borderWidth:1,
                           borderRadius:10,
