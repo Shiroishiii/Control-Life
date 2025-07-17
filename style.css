@@ -112,6 +112,7 @@ nav ul li a:hover {
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="number"],
 textarea {
     width: 100%;
     max-width: 320px;
@@ -142,6 +143,7 @@ textarea {
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
+input[type = "number"]:focus,
 textarea:focus {
     border: 3px solid #fffb00;
     background: none;
@@ -149,7 +151,7 @@ textarea:focus {
     color: #ffffff;
 }
 
-button,
+.btnCefeitos,
 input[type="submit"] {
     background: linear-gradient(90deg, #ffc400 60%, #ff8c00 100%);
     color: #222;
@@ -575,3 +577,12 @@ margin-top:30px
     display: flex;
     gap: 180px;
 }
+
+.editores{
+   background-color: black;
+   color: rgb(255, 255, 255);
+}
+
+
+
+

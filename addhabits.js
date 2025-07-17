@@ -15,7 +15,7 @@ function Adicionar() {
 function addHabit() {
   let nomeHab = document.getElementById("habit-name").value.trim();
   let descHab = document.getElementById("habit-description").value.trim();
-  let metaHab = document.getElementById("habit-goal").value.trim();
+  let metaHab = Number(document.getElementById("habit-goal").value.trim());
   let notasHab = document.getElementById("habit-notes").value.trim();
   let corHab = document.getElementById("habit-color").value.trim();
 
