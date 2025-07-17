@@ -30,3 +30,15 @@ botaoEditar.addEventListener('click', function () {
   inputFoto.click(); 
 });
 
+
+
+function excluirConta(){
+  const confirmar = confirm("Tem certeza que deseja excluir a conta?")
+
+  if(confirmar){
+    localStorage.removeItem('usuarios');
+    localStorage.removeItem('fotoPerfil');
+    alert("Conta excluída");
+    window.location.href = "login.html";
+  }
+}
