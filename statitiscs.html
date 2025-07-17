@@ -17,12 +17,12 @@
             <div class="sidebar">
               <span>Menu</span>
               <div class="sidebarOptions">
-                <p class="element"><a href="profile.html">Perfil </a></p> 
-                <p class="element"><a href="statitiscs.html">Metas</a></p>
+                <p class="element"><a href="mainMenu.html">Menu Principal </a></p>
                 <p class="element"> <a href="habits.html">Hábitos</a></p>
                 <p class="element"> <a href="statitiscs.html">Progresso</a></p>
-                <p class="element"> <a href="about.html">Sobre</a></p>
-                <p class="element">Sair</p>
+                <p class="element"><a href="meusHabitos.html">Metas</a></p>
+                <p class="element"><a href="profile.html">Perfil </a></p> 
+                <p class="element"> <a href="indexInicio.html">Inicio/Sobre</a></p>
               </div>
             </div>
           </div>
@@ -36,17 +36,22 @@
             <div>
                 <canvas id="graficoPessoal" width="500px" height="500px">
                     <script>
+                      const nomeDoHabito = JSON.parse(localStorage.getItem('nomeDoHabito')) || []
+                      const percentualConclusao = JSON.parse(localStorage.getItem('percentualConclusao')) || []
+                      const cor = JSON.parse(localStorage.getItem('cor')) || []
+
+
                         Chart.defaults.font.family = 'MyFont'
                         const ctx = document.getElementById('graficoPessoal').getContext('2d');
                   
                     new Chart(ctx, {
                       type: 'bar',
                       data: {
-                        labels: ['Água 💧', 'Estudo 📚', 'Exercício 🏃‍♂️', 'Sono 😴'],
+                        labels: nomeDoHabito,
                         datasets: [{
                           label: 'Progresso dos hábitos',
-                          data: [80, 60, 40, 90,],
-                          backgroundColor: ['#11FF00', '#FFF200', '#0000FF', '#FF0000'],
+                          data: percentualConclusao,
+                          backgroundColor: cor,
                           borderColor:'#fff',
                           borderWidth:1,
                           borderRadius:10,
@@ -72,17 +77,7 @@
                       });
                     </script>
                 </canvas>
-              </div>
-              <h2>Nível e XP</h2>
-              <h4>Level atual:</h4>
-              <h4>XP para o próximo nível</h4>
-              <div class="xpContainer">
-                <div class="xpBar">
-                    <div class="xpText">
-                        <p>0 / 100 XP - LVL 1</p>
-                    </div>
-                </div>
-              </div>
+             
             </div>
     </main>
 </body>

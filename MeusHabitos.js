@@ -1,0 +1,162 @@
+
+let contador = 0
+if(localStorage.getItem("contador")){ //Verifica se ja existe algum valor salvo
+    contador = parseInt(localStorage.getItem("contador")) //parseInt converte de string para numero
+}
+document.getElementById("contador").textContent = contador //textContent serve para alterar o texto dentro de um elemento HTML
+const habitos = JSON.parse(localStorage.getItem('habitos'))
+
+function add(id){
+    // console.log(id)
+    for( let i = 0; i < habitos.length; i++){
+        if(habitos[i].id == id){
+            habitos[i].progresso++
+            habitos[i].percentualConclusao = (habitos[i].progresso/ habitos[i].meta) * 100
+            console.log(habitos[i])
+        }
+        console.log(habitos[i].progresso)
+        document.getElementById(habitos[i].id).innerHTML = `progresso: ${habitos[i].progresso}`
+    }
+    localStorage.setItem('habitos',JSON.stringify(habitos))
+    atualizarDadosGrafico()
+    // encontrar o hábito que tem esse id
+    // habitos[i].id == id
+    // progresso++
+
+
+    // contador++
+    // atualizarContador()
+}
+function atualizarContador(){
+    document.getElementById("contador").textContent = contador
+    localStorage.setItem("contador", contador)
+}
+function mostrarCards(){
+    const habitos = JSON.parse(localStorage.getItem("habitos")) || []
+    console.log (habitos)
+    
+ 
+    document.getElementById("CardsContainer").innerHTML +=''
+    for(let i=0; i < habitos.length; i++) {
+        document.getElementById("CardsContainer").innerHTML +=`
+        <div class="card">
+            <h3>${habitos[i].nomeDoHabito}</h3>
+            <p>Descrição : ${habitos[i].descricao}</p>
+            <p>Meta : ${habitos[i].meta}</p>
+            <p>Notas : ${habitos[i].notas}</p>
+            <button onclick="add(${habitos[i].id})">+</button>
+            <p id="${habitos[i].id}">progresso: ${habitos[i].progresso}</p>
+        </div>
+        `
+}
+}
+
+mostrarCards()
+
+function atualizarDadosGrafico(){
+
+    const habitos = JSON.parse(localStorage.getItem('habitos')) || []
+    const nomeDoHabito = []
+    const percentualConclusao =  []
+    const cor =  []
+  
+    for(let i = 0; i<habitos.length; i++){
+      nomeDoHabito.push(habitos[i].nomeDoHabito)
+      percentualConclusao.push(habitos[i].percentualConclusao)
+      cor.push(habitos[i].cor)
+    }
+}
+
+function mostrarCards() {
+    const habitos = JSON.parse(localStorage.getItem("habitos")) || []
+    console.log(habitos)
+
+    // document.getElementById("CardsContainer").innerHTML += '' 
+    document.getElementById("CardsContainer").innerHTML = '' 
+    
+    for (let i = 0; i < habitos.length; i++) {
+        document.getElementById("CardsContainer").innerHTML += `
+<<<<<<< HEAD
+            <div class="Card">  
+                <div class="flex-linha">
+                    <h3>${habitos[i].NomeDoHábito}</h3>
+                    <div>
+                        <button class="editores" onclick="excluir(${i})">
+                            <img src="imgs/game-icons--trash-can (1).svg" alt="Excluir">
+                        </button>
+
+                        <button class="editores" onclick="editar(${i})">
+                            <img src="game-icons--pencil.svg" alt="Editar">
+                        </button>
+                    </div>
+                </div>
+                <p>Descrição: ${habitos[i].Descrição}</p>
+                <p>Meta: ${habitos[i].Meta}</p>
+                <p>Notas: ${habitos[i].Notas}</p>
+            </div>
+        `
+    }
+}
+
+function excluir(index) {
+    const confirmar = confirm("Tem certeza que deseja excluir este hábito?")
+
+    if (confirmar) {
+        const habitos = JSON.parse(localStorage.getItem("habitos")) || []
+        habitos.splice(index, 1) // Remove o item do array pelo indice
+        localStorage.setItem("habitos", JSON.stringify(habitos)) // Atualiza o localStorage
+        mostrarCards() // Atualiza a lista de cards na tela
+        window.location.reload();
+    }
+}
+
+
+
+
+function adicionarNovoHabito(){
+    window.location.href = "addhabitis.html"
+}
+
+
+
+
+// mostrar os cards ao carregar
+mostrarCards()
+=======
+        
+
+        <div id="Card">
+            <h3>${habitos[i].NomeDoHábito}</h3>
+             <button class="editores" onclick="excluir()">
+                <img src="imgs/game-icons--trash-can (1).svg" alt="">
+             </button>
+
+             <button class="editores" onclick="editar()">
+            <img <style color="white" src="game-icons--pencil.svg" alt="">
+             </button>
+
+            <p>Descrição : ${habitos[i].Descrição}</p>
+            <p>Meta : ${habitos[i].Meta}</p>
+            <p>Notas : ${habitos[i].Notas}</p>
+        </div>
+        `
+    }
+  
+    localStorage.setItem('nomeDoHabito',JSON.stringify(nomeDoHabito))
+    localStorage.setItem('percentualConclusao',JSON.stringify(percentualConclusao))
+    localStorage.setItem('cor',JSON.stringify(cor))
+    
+  
+    
+    console.log(habitos, nomeDoHabito, percentualConclusao, cor) 
+  }
+
+// document.getElementById('diasfeitos').value
+// document.getElementById('metadias').value
+// console.log(diasfeitos)
+// const porcentagem = ('diasfeitos'/'metadias') *100
+// console.log(porcentagem)
+
+
+
+>>>>>>> e4ed0e039aba5a35bd17dcb4cfbd26e0b39e963b

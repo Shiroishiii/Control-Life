@@ -1,4 +1,4 @@
-meuStorage = localStorage;
+  meuStorage = localStorage;
 
  const usuarios = {
     nome: '',
@@ -33,3 +33,28 @@ function login(){
     }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const usuarioSalvo = JSON.parse(localStorage.getItem('usuarios'));
+
+    if (usuarioSalvo) {
+      document.getElementById("perfilNome").textContent = usuarioSalvo.nome;
+      document.getElementById("perfilEmail").textContent = usuarioSalvo.email;
+    }
+  });
+
+  function salvarPerfil(){
+    window.location.href = "mainMenu.html"
+  }
+  function excluirConta(){
+    document.getElementById('excluirConta').addEventListener('click',() => {
+      const confirmar = confirm("Tem certeza que deseja excluir sua conta?");
+      if (confirmar) {
+        localStorage.removeItem('usuarios');
+        localStorage.removeItem('fotoPerfil');
+  
+        alert("Conta excluída");
+        window.location.href = "login.html";
+      }
+    });
+  }
+  excluirConta();

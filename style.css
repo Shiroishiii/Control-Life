@@ -112,20 +112,21 @@ nav ul li a:hover {
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="number"],
 textarea {
     width: 100%;
     max-width: 320px;
     padding: 10px 16px;
     margin: 10px 0 18px 0;
     border: 3px solid #ffc400;
-    background: rgb(255, 255, 255);
+    background: none;
     border-radius: 10px;
-    color: #111;
+    color: #ffffff;
     font-size: 1.1rem;
     font-family: 'MyFont',monospace;
     box-shadow: 0 0 8px #ffc400, 0 0 2px #fff inset;
     outline: none;
-    transition: border 0.2s, box-shadow 0.2s, background 0.3s;
+    transition: border 0.2s, box-shadow 0.2s;
     text-shadow: 0 0 2px #000, 0 0 8px #ffc400;
     animation: input-glow 1s infinite alternate;
 }
@@ -142,14 +143,15 @@ textarea {
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
+input[type = "number"]:focus,
 textarea:focus {
     border: 3px solid #fffb00;
-    background: rgb(255, 255, 255);
+    background: none;
     box-shadow: 0 0 16px #fffb00, 0 0 8px #fff inset;
-    color: #111;
+    color: #ffffff;
 }
 
-button,
+.btnCefeitos,
 input[type="submit"] {
     background: linear-gradient(90deg, #ffc400 60%, #ff8c00 100%);
     color: #222;
@@ -163,7 +165,7 @@ input[type="submit"] {
     margin-top: 12px;
     box-shadow: 0 0 8px #ffc400, 0 0 2px #fff inset;
     text-shadow: 0 0 2px #fff, 0 0 8px #ffc400;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
+    transition: color 0.2s, box-shadow 0.2s, border 0.2s;
     animation: btn-glow 1s infinite alternate;
 }
 
@@ -171,8 +173,7 @@ input[type="submit"] {
     0% { box-shadow: 0 0 8px #ffc400, 0 0 2px #fff inset; }
     100% { box-shadow: 0 0 16px #ff8c00, 0 0 8px #fff inset; }
 }
-
-button:hover,
+.btnCefeitos:hover,
 input[type="submit"]:hover {
     background: linear-gradient(90deg, #ff8c00 60%, #ffc400 100%);
     color: #fff;
@@ -183,7 +184,7 @@ input[type="submit"]:hover {
 .add-habit-btn {
     display: flex;
     align-items: center;
-    gap: 8px;
+    margin: 8px;
     background: linear-gradient(90deg, #ffc400 60%, #ff8c00 100%);
     color: #222;
     border: none;
@@ -195,7 +196,7 @@ input[type="submit"]:hover {
     cursor: pointer;
     box-shadow: 0 0 8px #ffc400, 0 0 2px #fff inset;
     text-shadow: 0 0 2px #fff, 0 0 8px #ffc400;
-    transition: background 0.2s, box-shadow 0.2s;
+    transition: box-shadow 0.2s;
 }
 
 .add-habit-btn svg {
@@ -365,6 +366,8 @@ input[type="submit"]:hover {
     left: 0px;
     top: 0;
     width: 250px;
+    padding-top: 50px;
+    z-index: 100000;
     height: 100vh;
     border-radius: 0 10px 10px 0;
     color: #fff;
@@ -393,9 +396,6 @@ input[type="submit"]:hover {
 
 .minimizado {
     display: inline-block;
-    position: fixed;
-    left: 0px;
-    top: 60px;
 }
 
 .minimizado:hover .sidebar {
@@ -405,6 +405,9 @@ input[type="submit"]:hover {
 .icone {
     display: inline-block;
     cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 45px;
     color: #ffffff;
 }
 .estilizar{
@@ -493,6 +496,7 @@ input[type="submit"]:hover {
 
 #iconEditar {
     cursor: pointer;
+    z-index: 10000;
 }
 
 .containerPreview {
@@ -519,3 +523,72 @@ input[type="submit"]:hover {
 color: #ffc400;
 text-decoration-line:none;
 }
+.user{
+    font-size: 27px;
+}
+
+#CardsContainer{
+display: flex;
+flex-direction: column;
+justify-content: center;
+flex-wrap: wrap;
+gap:20px;
+margin: 100px;
+
+}
+.Card{
+    display: block;
+    justify-content: space-between;
+    max-width:700px;
+    background-color: rgba(14, 16, 58, 0.827);
+    padding: 10px;
+    border: 1.8px solid#fec405;
+    border-radius: 8px;
+    overflow-wrap: break-word;
+}
+.flex-linha{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.containerText-Left{
+display: flex;
+flex-direction: column;
+width: 300px;
+height: 340px;
+border: 1.8px, solid, #ffc400;
+box-sizing: content-box;
+padding: 10px;
+border-radius: 8px;
+margin-left: 50px;
+margin-top:30px
+
+}
+.containerText-Right{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 850px;
+    border: 1.8px, solid, #ffc400;
+    box-sizing: content-box;
+    padding: 10px;
+    position: relative;
+    border-radius: 8px;
+    margin-right: 50px;
+    margin-top:30px
+}
+#menudomenu{
+    display: flex;
+    gap: 180px;
+}
+
+.editores{
+   background-color: black;
+   color: rgb(255, 255, 255);
+
+}
+
+
+
+
+

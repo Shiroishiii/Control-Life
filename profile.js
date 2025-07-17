@@ -1,22 +1,32 @@
-function fotoPerfilPreview(){
 
-   const inputFotoPerfil = document.getElementById ('fotoPerfil')
-   const uploadPerfil = document.getElementById ('uploadPerfil')
+const inputFoto = document.getElementById('fotoPerfil');
+const imgPreview = document.getElementById('preview');
 
-   uploadPerfil.addEventListener ('click', () => {
-        inputFotoPerfil.click()
-   })
 
-   inputFotoPerfil.addEventListener('change', function(event) {
-    const arquivo = event.target.files[0]
-    if (!arquivo) return
-    const reader = new FileReader()
-
-    reader.onload = function(e) {
-        document.getElementById('preview').src = e.target.result
-    }
-
-    reader.readAsDataURL(arquivo)
-    })
+const imagemSalva = localStorage.getItem('fotoPerfil');
+if (imagemSalva) {
+  imgPreview.src = imagemSalva;
 }
-fotoPerfilPreview()
+
+
+inputFoto.addEventListener('change', function () {
+  const arquivo = inputFoto.files[0];
+
+  if (arquivo) {
+    const leitor = new FileReader();
+
+    leitor.onload = function () {
+      const base64 = leitor.result;
+      localStorage.setItem('fotoPerfil', base64);
+      imgPreview.src = base64; 
+    };
+
+    leitor.readAsDataURL(arquivo); 
+  }
+});
+const botaoEditar = document.getElementById('iconEditar');
+
+botaoEditar.addEventListener('click', function () {
+  inputFoto.click(); 
+});
+

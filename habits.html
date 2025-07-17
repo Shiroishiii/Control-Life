@@ -9,13 +9,22 @@
 <body>
     <header>
         <h1>Control <span class="life-highlight">Life</span></h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="about.html">Sobre</a></li>
-                <li><a href="login.html">Login/Registre-se</a></li>
-            </ul>
-        </nav>
+        <div class="minimizado">
+            <span class="icone">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"></path></svg>
+            </span>
+            <div class="sidebar">
+              <span>Menu</span>
+              <div class="sidebarOptions">
+                <p class="element"><a href="profile.html">Menu Principal </a></p>
+                <p class="element"> <a href="habits.html">Hábitos</a></p>
+                <p class="element"> <a href="statitiscs.html">Progresso</a></p>
+                <p class="element"><a href="meusHabitos.html">Metas</a></p>
+                <p class="element"><a href="profile.html">Perfil </a></p> 
+                <p class="element"> <a href="indexInicio.html">Inicio/Sobre</a></p>
+              </div>
+            </div>
+          </div>
     </header>
     <div class="fundo-central">
         <h1>Hábitos</h1>
@@ -23,7 +32,7 @@
                    <li>
         Beber água
         <button class="habit-action-btn" title="Adicionar" id="Beber Água" onclick="addSuggestedHabit('Beber Água')" >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffffc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"/>
                 <line x1="5" y1="12" x2="19" y2="12"/>
             </svg>
@@ -32,7 +41,7 @@
     <li>
         Exercitar-se
         <button class="habit-action-btn" title="Adicionar" id="Exercitar-Se" onclick="addSuggestedHabit('Exercitar-Se')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffffc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"/>
                 <line x1="5" y1="12" x2="19" y2="12"/>
             </svg>
@@ -41,7 +50,7 @@
     <li>
         Ler um livro
         <button class="habit-action-btn" title="Adicionar" id="Ler um Livro" onclick="addSuggestedHabit('Ler um Livro')" >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffffc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"/>
                 <line x1="5" y1="12" x2="19" y2="12"/>
             </svg>
@@ -50,7 +59,7 @@
     <li>
         Meditar
         <button class="habit-action-btn" title="Adicionar" id="Meditar" onclick="addSuggestedHabit('Meditar')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffffc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"/>
                 <line x1="5" y1="12" x2="19" y2="12"/>
             </svg>
@@ -59,7 +68,7 @@
     <li>
         Dormir cedo
         <button class="habit-action-btn" title="Adicionar" id="Dormir Cedo" onclick="addSuggestedHabit('Dormir Cedo')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffffc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"/>
                 <line x1="5" y1="12" x2="19" y2="12"/>
             </svg>
@@ -68,7 +77,7 @@
     <li>
         Estudar
         <button class="habit-action-btn" title="Adicionar" id="Estudar" onclick="addSuggestedHabit('Estudar')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffffc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"/>
                 <line x1="5" y1="12" x2="19" y2="12"/>
             </svg>
@@ -77,7 +86,7 @@
     <li>
         Fazer um esporte
         <button class="habit-action-btn" title="Adicionar" id="Fazer um Esporte" onclick="addSuggestedHabit('Fazer um esporte')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffffc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"/>
                 <line x1="5" y1="12" x2="19" y2="12"/>
             </svg>
@@ -86,7 +95,7 @@
     <li>
         Praticar yoga
         <button class="habit-action-btn" title="Adicionar" id="Praticar Yoga" onclick="addSuggestedHabit('Praticar Yoga')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffffc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"/>
                 <line x1="5" y1="12" x2="19" y2="12"/>
             </svg>
@@ -95,7 +104,7 @@
     <li>
         Fazer uma caminhada
         <button class="habit-action-btn" title="Adicionar" id="Fazer uma caminhada" onclick="addSuggestedHabit('Fazer uma caminhada')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffffc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"/>
                 <line x1="5" y1="12" x2="19" y2="12"/>
             </svg>
@@ -104,7 +113,7 @@
     <li>
         Desenhar
         <button class="habit-action-btn" title="Adicionar" id="Desenhar" onclick="addSuggestedHabit('Desenhar')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffffc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"/>
                 <line x1="5" y1="12" x2="19" y2="12"/>
             </svg>
@@ -113,7 +122,7 @@
     <li>
         Tocar um instrumento
         <button class="habit-action-btn" title="Adicionar" id="Tocar Um Estrumento" onclick="addSuggestedHabit('Tocar Um Estrumento')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffffc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"/>
                 <line x1="5" y1="12" x2="19" y2="12"/>
             </svg>
@@ -121,7 +130,7 @@
     </li>
 </ul>
             <button onclick="Adicionar()"  type="button"   class="add-habit-btn" title="Adicionar novo hábito" >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffffc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="12" y1="5" x2="12" y2="19"/>
                     <line x1="5" y1="12" x2="19" y2="12"/>
                 </svg>
@@ -130,7 +139,7 @@
 
 
             <button onclick="MeusHábitos()"  type="button"   class="add-habit-btn" title="Adicionar novo hábito" >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffffc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="12" y1="5" x2="12" y2="19"/>
                     <line x1="5" y1="12" x2="19" y2="12"/>
                 </svg>
