@@ -1,4 +1,4 @@
-meuStorage = localStorage;
+  meuStorage = localStorage;
 
  const usuarios = {
     nome: '',
