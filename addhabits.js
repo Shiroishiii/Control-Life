@@ -26,11 +26,14 @@ function addHabit() {
   } else {
     const habit = {
       usuario: "Informações do usuário logado", 
-      NomeDoHábito: nomeHab,
-      Descrição: descHab,
-      Meta: metaHab,
-      Notas: notasHab,
-      Cor: corHab,
+      nomeDoHabito: nomeHab,
+      descricao: descHab,
+      meta: Number(metaHab),
+      notas: notasHab,
+      percentualConclusao: 0,
+      progresso: 0,
+      id: Date.now(),
+      cor: corHab,
     };
 
     habitos.push(habit);
@@ -38,7 +41,7 @@ function addHabit() {
 
     // Salvando no localStorage
     localStorage.setItem("habitos", JSON.stringify(habitos));
-
+    atualizarDadosGrafico()
     // Redirecionando para a página de hábitos
     window.location.href = "habits.html";
   }
@@ -55,3 +58,24 @@ function MeusHábitos(){
  window.location.href="MeusHabitos.html"
 }
 
+ function atualizarDadosGrafico(){
+
+  const habitos = JSON.parse(localStorage.getItem('habitos')) || []
+  const nomeDoHabito = []
+  const percentualConclusao =  []
+  const cor =  []
+
+  for(let i = 0; i<habitos.length; i++){
+    nomeDoHabito.push(habitos[i].nomeDoHabito)
+    percentualConclusao.push(habitos[i].percentualConclusao)
+    cor.push(habitos[i].cor)
+  }
+
+  localStorage.setItem('nomeDoHabito',JSON.stringify(nomeDoHabito))
+  localStorage.setItem('percentualConclusao',JSON.stringify(percentualConclusao))
+  localStorage.setItem('cor',JSON.stringify(cor))
+  
+
+  
+  console.log(habitos, nomeDoHabito, percentualConclusao, cor) 
+}
