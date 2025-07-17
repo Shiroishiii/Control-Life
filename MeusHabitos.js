@@ -34,8 +34,13 @@ function atualizarContador(){
 function mostrarCards(){
     const habitos = JSON.parse(localStorage.getItem("habitos")) || []
     console.log (habitos)
-    
- 
+
+    document.getElementById('CardsCOntainer').innerHTML = ''
+    for (let i=0; 1 < habitos.legnht; i++){
+        document.getElementById('CardsContainer').innerHTML +=`
+        <div class="card">
+        <div class="flex-linha">
+                    <h3>${habitos[i].nomeDoHabito}<h3>
                     <div>
                         <button class="editores" onclick="excluir(${i})">
                             <img src="imgs/game-icons--trash-can (1).svg" alt="Excluir">
@@ -53,7 +58,7 @@ function mostrarCards(){
             <p id="${habitos[i].id}">progresso: ${habitos[i].progresso}</p>
         </div>
         `
-}
+    }
 }
 
 mostrarCards()
