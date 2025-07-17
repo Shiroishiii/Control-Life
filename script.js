@@ -32,8 +32,3 @@ function login() {
   } else {
     alert("Usuário ou senha incorretos.")
   }
-
-  if (nome === "" || senha === "") {
-    alert("Por favor, preencha todos os campos.")
-  }
-}

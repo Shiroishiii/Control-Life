@@ -36,12 +36,6 @@ function mostrarCards(){
     console.log (habitos)
     
  
-    document.getElementById("CardsContainer").innerHTML =''
-    for(let i=0; i < habitos.length; i++) {
-        document.getElementById("CardsContainer").innerHTML +=`
-        <div class="card">
-        <div class="flex-linha">
-                    <h3>${habitos[i].nomeDoHabito}</h3>
                     <div>
                         <button class="editores" onclick="excluir(${i})">
                             <img src="imgs/game-icons--trash-can (1).svg" alt="Excluir">
