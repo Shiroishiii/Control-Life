@@ -76,7 +76,6 @@ function mostrarCards() {
     
     for (let i = 0; i < habitos.length; i++) {
         document.getElementById("CardsContainer").innerHTML += `
-<<<<<<< HEAD
             <div class="Card">  
                 <div class="flex-linha">
                     <h3>${habitos[i].NomeDoHábito}</h3>
@@ -122,41 +121,3 @@ function adicionarNovoHabito(){
 
 // mostrar os cards ao carregar
 mostrarCards()
-=======
-        
-
-        <div id="Card">
-            <h3>${habitos[i].NomeDoHábito}</h3>
-             <button class="editores" onclick="excluir()">
-                <img src="imgs/game-icons--trash-can (1).svg" alt="">
-             </button>
-
-             <button class="editores" onclick="editar()">
-            <img <style color="white" src="game-icons--pencil.svg" alt="">
-             </button>
-
-            <p>Descrição : ${habitos[i].Descrição}</p>
-            <p>Meta : ${habitos[i].Meta}</p>
-            <p>Notas : ${habitos[i].Notas}</p>
-        </div>
-        `
-    }
-  
-    localStorage.setItem('nomeDoHabito',JSON.stringify(nomeDoHabito))
-    localStorage.setItem('percentualConclusao',JSON.stringify(percentualConclusao))
-    localStorage.setItem('cor',JSON.stringify(cor))
-    
-  
-    
-    console.log(habitos, nomeDoHabito, percentualConclusao, cor) 
-  }
-
-// document.getElementById('diasfeitos').value
-// document.getElementById('metadias').value
-// console.log(diasfeitos)
-// const porcentagem = ('diasfeitos'/'metadias') *100
-// console.log(porcentagem)
-
-
-
->>>>>>> e4ed0e039aba5a35bd17dcb4cfbd26e0b39e963b
