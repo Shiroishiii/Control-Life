@@ -96,5 +96,6 @@ function excluir(index) {
 function adicionarNovoHabito(){
     window.location.href = "addhabitis.html"
 }
+
 // mostrar os cards ao carregar
 mostrarCards()
