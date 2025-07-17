@@ -7,14 +7,14 @@ if(localStorage.getItem("contador")){ //Verifica se ja existe algum valor salvo
 const habitos = JSON.parse(localStorage.getItem('habitos'))
 
 function add(id){
-    // console.log(id)
+    console.log(id)
     for( let i = 0; i < habitos.length; i++){
         if(habitos[i].id == id){
             habitos[i].progresso++
             habitos[i].percentualConclusao = (habitos[i].progresso/ habitos[i].meta) * 100
-            console.log(habitos[i])
+            // console.log(habitos[i])
         }
-        console.log(habitos[i].progresso)
+        // console.log(habitos[i].progresso)
         document.getElementById(habitos[i].id).innerHTML = `progresso: ${habitos[i].progresso}`
     }
     localStorage.setItem('habitos',JSON.stringify(habitos))
@@ -36,13 +36,6 @@ function mostrarCards(){
     console.log (habitos)
     
  
-    // document.getElementById("CardsContainer").innerHTML +=''
-    for(let i=0; i < habitos.length; i++) {
-        document.getElementById("CardsContainer").innerHTML +=`
-        <div class="card">
-      <div class="Card">  
-                <div class="flex-linha">
-                    <h3>${habitos[i].NomeDoHábito}</h3>
                     <div>
                         <button class="editores" onclick="excluir(${i})">
                             <img src="imgs/game-icons--trash-can (1).svg" alt="Excluir">
@@ -94,14 +87,9 @@ function excluir(index) {
 }
 
 
-
-
 function adicionarNovoHabito(){
     window.location.href = "addhabitis.html"
 }
-
-
-
 
 // mostrar os cards ao carregar
 mostrarCards()
