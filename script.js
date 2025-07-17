@@ -1,60 +1,39 @@
-  meuStorage = localStorage;
-
- const usuarios = {
-    nome: '',
-    email: '',
-    senha: ''
-}
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || []
 
 function cadastro() {
-    usuarios.nome = document.getElementById ('cadNome').value
-    usuarios.senha = document.getElementById ('cadSenha').value
-    usuarios.email = document.getElementById ('cadEmail').value
+  let nome = document.getElementById("cadNome").value
+  let email = document.getElementById("cadEmail").value
+  let senha = document.getElementById("cadSenha").value
 
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-    
-    console.log (usuarios)
-    alert ("Cadastrado com sucesso")
+  if (nome && email && senha) {
+    let usuario = {
+      nome: nome,
+      email: email,
+      senha: senha
+    }
 
+    usuarios.push(usuario)
+    localStorage.setItem("usuarios", JSON.stringify(usuarios))
+    alert("Cadastro realizado com sucesso!")
     window.location.href = "login.html"
+  } else {
+    alert("Por favor, preencha todos os campos.")
+  }
 }
 
-function login(){
-    const usuarioSalvo = JSON.parse(localStorage.getItem('usuarios'));
-    const nome = document.getElementById('logNome').value;
-    const senha = document.getElementById('logSenha').value;
+function login() {
+  let nome = document.getElementById("logNome").value
+  let senha = document.getElementById("logSenha").value
 
-    if (nome === usuarioSalvo.nome || nome === usuarioSalvo.email && senha === usuarioSalvo.senha){
-        alert ("Login efetuado com sucesso!")
-
-        window.location.href = "mainMenu.html"
-    }else{
-        alert ("Usuario ou senha incorretos!")
-    }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    const usuarioSalvo = JSON.parse(localStorage.getItem('usuarios'));
-
-    if (usuarioSalvo) {
-      document.getElementById("perfilNome").textContent = usuarioSalvo.nome;
-      document.getElementById("perfilEmail").textContent = usuarioSalvo.email;
-    }
-  });
-
-  function salvarPerfil(){
+  let usuarioEncontrado = usuarios.find(usuario => usuario.nome === nome && usuario.senha === senha)
+  if (usuarioEncontrado) {
+    alert("Login realizado com sucesso!")
     window.location.href = "mainMenu.html"
+  } else {
+    alert("Usuário ou senha incorretos.")
   }
-  function excluirConta(){
-    document.getElementById('excluirConta').addEventListener('click',() => {
-      const confirmar = confirm("Tem certeza que deseja excluir sua conta?");
-      if (confirmar) {
-        localStorage.removeItem('usuarios');
-        localStorage.removeItem('fotoPerfil');
-  
-        alert("Conta excluída");
-        window.location.href = "login.html";
-      }
-    });
+
+  if (nome === "" || senha === "") {
+    alert("Por favor, preencha todos os campos.")
   }
-  excluirConta();
+}
