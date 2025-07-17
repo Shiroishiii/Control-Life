@@ -37,7 +37,7 @@ function mostrarCards(){
     
  
     document.getElementById("CardsContainer").innerHTML +=''
-    for(let i=0; i < habitos.length; i++){
+    for(let i=0; i < habitos.length; i++) {
         document.getElementById("CardsContainer").innerHTML +=`
         <div class="card">
             <h3>${habitos[i].nomeDoHabito}</h3>
@@ -46,8 +46,8 @@ function mostrarCards(){
             <p>Notas : ${habitos[i].notas}</p>
             <button onclick="add(${habitos[i].id})">+</button>
             <p id="${habitos[i].id}">progresso: ${habitos[i].progresso}</p>
-            
         </div>
+        `
 }
 }
 
@@ -64,7 +64,9 @@ function atualizarDadosGrafico(){
       nomeDoHabito.push(habitos[i].nomeDoHabito)
       percentualConclusao.push(habitos[i].percentualConclusao)
       cor.push(habitos[i].cor)
-=======
+    }
+}
+
 function mostrarCards() {
     const habitos = JSON.parse(localStorage.getItem("habitos")) || []
     console.log(habitos)
@@ -73,6 +75,7 @@ function mostrarCards() {
     for (let i = 0; i < habitos.length; i++) {
         document.getElementById("CardsContainer").innerHTML += `
         
+
         <div id="Card">
             <h3>${habitos[i].NomeDoHábito}</h3>
              <button class="editores" onclick="excluir()">
@@ -86,8 +89,8 @@ function mostrarCards() {
             <p>Descrição : ${habitos[i].Descrição}</p>
             <p>Meta : ${habitos[i].Meta}</p>
             <p>Notas : ${habitos[i].Notas}</p>
-    
         </div>
+        `
     }
   
     localStorage.setItem('nomeDoHabito',JSON.stringify(nomeDoHabito))
