@@ -117,7 +117,5 @@ function adicionarNovoHabito(){
 }
 
 
-
-
 // mostrar os cards ao carregar
 mostrarCards()
