@@ -1,4 +1,4 @@
-
+let meuGrafico = null
 let contador = 0
 if(localStorage.getItem("contador")){ //Verifica se ja existe algum valor salvo
     contador = parseInt(localStorage.getItem("contador")) //parseInt converte de string para numero
@@ -35,12 +35,12 @@ function mostrarCards(){
     const habitos = JSON.parse(localStorage.getItem("habitos")) || []
     console.log (habitos)
 
-    document.getElementById('CardsCOntainer').innerHTML = ''
-    for (let i=0; 1 < habitos.legnht; i++){
-        document.getElementById('CardsContainer').innerHTML +=`
+    document.getElementById("CardsContainer").innerHTML = ''
+    for (let i=0; i < habitos.length; i++){ 
+        document.getElementById("CardsContainer").innerHTML +=`
         <div class="card">
         <div class="flex-linha">
-                    <h3>${habitos[i].nomeDoHabito}<h3>
+                    <h3>${habitos[i].nomeDoHabito}</h3>
                     <div>
                         <button class="editores" onclick="excluir(${i})">
                             <img src="imgs/game-icons--trash-can (1).svg" alt="Excluir">
@@ -61,23 +61,21 @@ function mostrarCards(){
     }
 }
 
-mostrarCards()
 
 function atualizarDadosGrafico(){
 
     const habitos = JSON.parse(localStorage.getItem('habitos')) || []
-    const nomeDoHabito = []
-    const percentualConclusao =  []
-    const cor =  []
-  
-    for(let i = 0; i<habitos.length; i++){
-      nomeDoHabito.push(habitos[i].nomeDoHabito)
-      percentualConclusao.push(habitos[i].percentualConclusao)
-      cor.push(habitos[i].cor)
+    const nomeDoHabito = habitos.map (h => h.nomeDoHabito)
+    const percentualConclusao = habitos.map(h => h.percentualConclusao || 0)
+    const cor = habitos.map (h => h.cor || '#aaa')
+
+  if(meuGrafico){
+    meuGrafico.data.labels = nomeDoHabito
+    meuGrafico.data.datasets[0].data = percentualConclusao
+    meuGrafico.data.datasets[0].backgroundColor = cor
+    meuGrafico.update()
     }
 }
-
-
 
 function excluir(index) {
     const confirmar = confirm("Tem certeza que deseja excluir este hábito?")

@@ -1,15 +1,18 @@
+let meuGrafico
+
 function atualizarDadosGrafico(){
 
     const habitos = JSON.parse(localStorage.getItem('habitos')) || []
-    const nomeDoHabito = []
-    const percentualConclusao =  []
-    const cor =  []
-  
-    for(let i = 0; i<habitos.length; i++){
-      nomeDoHabito.push(habitos[i].nomeDoHabito)
-      percentualConclusao.push(habitos[i].percentualConclusao)
-      cor.push(habitos[i].cor)
-    }
+    const nomeDoHabito = habitos.map (h => h.nomeDoHabito)
+    const percentualConclusao = habitos.map(h => h.percentualConclusao || 0)
+    const cor = habitos.map (h => h.cor || '#aaa')
+
+  if(meuGrafico){
+    meuGrafico.data.labels = nomeDoHabito
+    meuGrafico.data.datasets[0].data = percentualConclusao
+    meuGrafico.data.datasets[0].backgroundColor = cor
+    meuGrafico.update()
+  }
 }
 
 
