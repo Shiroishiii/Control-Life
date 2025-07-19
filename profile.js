@@ -48,8 +48,15 @@ function excluirConta(){
   const confirmar = confirm("Tem certeza que deseja excluir a conta?")
 
   if(confirmar){
-    localStorage.removeItem('usuarios')
+    const usuarioAtual = JSON.parse(localStorage.getItem('usuarioAtual'))
+    let usuarios = JSON.parse(localStorage.getItem('usuarios'))
+    usuarios = usuarios.filter(u => u.email !== usuarioAtual.email)
+
+    localStorage.setItem('usuarios', JSON.stringify(usuarios))
+
+    localStorage.removeItem('usuarioAtual')
     localStorage.removeItem('fotoPerfil')
+
     alert("Conta excluída")
     window.location.href = "login.html"
   }
