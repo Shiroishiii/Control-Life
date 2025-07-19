@@ -1,11 +1,23 @@
 
 const inputFoto = document.getElementById('fotoPerfil');
 const imgPreview = document.getElementById('preview');
+const perfilNome = document.getElementById('perfilNome')
+const perfilEmail = document.getElementById('perfilEmail')
 
+const usuarioAtual = JSON.parse(localStorage.getItem('usuarioAtual'))
+
+
+if (!usuarioAtual){
+  alert ("Você precisa estar logado!")
+  window.location.href = 'login.html'
+}
 
 const imagemSalva = localStorage.getItem('fotoPerfil');
 if (imagemSalva) {
   imgPreview.src = imagemSalva;
+}else{
+  perfilNome.textContent = usuarioAtual.nome || 'Usuário'
+  perfilEmail.textContent = usuarioAtual.email || 'Email não definfido'
 }
 
 
@@ -36,9 +48,9 @@ function excluirConta(){
   const confirmar = confirm("Tem certeza que deseja excluir a conta?")
 
   if(confirmar){
-    localStorage.removeItem('usuarios');
-    localStorage.removeItem('fotoPerfil');
-    alert("Conta excluída");
-    window.location.href = "login.html";
+    localStorage.removeItem('usuarios')
+    localStorage.removeItem('fotoPerfil')
+    alert("Conta excluída")
+    window.location.href = "login.html"
   }
 }
