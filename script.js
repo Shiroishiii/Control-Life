@@ -27,6 +27,7 @@ function login() {
 
   let usuarioEncontrado = usuarios.find(usuario => usuario.nome === nome && usuario.senha === senha)
   if (usuarioEncontrado) {
+    localStorage.setItem("usuarioAtual", JSON.stringify(usuarioEncontrado)) 
     alert("Login realizado com sucesso!")
     window.location.href = "mainMenu.html"
   } else {
