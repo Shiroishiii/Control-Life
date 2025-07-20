@@ -540,7 +540,7 @@ margin: 100px;
     display: block;
     justify-content: space-between;
     max-width:700px;
-    background-color: rgba(14, 16, 58, 0.827);
+    background-color: #0e103ad3;
     padding: 10px;
     border: 1.8px solid#fec405;
     border-radius: 8px;
@@ -583,12 +583,39 @@ margin-top:30px
 }
 
 .editores{
-   background-color: black;
-   color: rgb(255, 255, 255);
-
+    background-color: #1b1b1b;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 6px 8px;
+    margin: 2px;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #000;
+    transition: all 0.1s ease-in-out;
 }
 
+.editores:hover{
+    background-color: #ffae00;
+    box-shadow: 1px 1px 0 #000;
+    transform: translate(2px, 2px);
+}
 
+#diasFeitos{
+    background-color: #1b1b1b;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 6px 8px;
+    margin: 2px;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #000;
+    transition: all 0.1s ease-in-out;
+}
 
+#diasFeitos:hover{
+    background-color: #ffae00;
+    box-shadow: 1px 1px 0 #000;
+    transform: translate(2px, 2px);
+}
 
 

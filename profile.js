@@ -54,6 +54,9 @@ function excluirConta(){
 
     localStorage.setItem('usuarios', JSON.stringify(usuarios))
 
+    const chaveHabitos = `habitos_${usuarioAtual.email.replace(/[@.]/g, '_')}`
+    localStorage.removeItem(chaveHabitos)
+
     localStorage.removeItem('usuarioAtual')
     localStorage.removeItem('fotoPerfil')
 
