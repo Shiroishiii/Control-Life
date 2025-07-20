@@ -1,5 +1,35 @@
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || []
 
+function gethabitosDoUserAtual() {
+  const usuario = JSON.parse(localStorage.getItem('usuarioAtual'))
+  if (!usuario) {
+    alert("Você precisa estar logado!")
+    window.location.href = 'login.html'
+    return []
+  }
+
+  const chave = `habitos_${usuario.email.replace(/[@.]/g, '_')}`
+  const habitos = JSON.parse(localStorage.getItem(chave))
+  return habitos || []
+}
+
+function atualizarDadosGrafico() {
+  const habitos = gethabitosDoUserAtual();
+  const nomeDoHabito = [];
+  const percentualConclusao = [];
+  const cor = [];
+
+  habitos.forEach(h => {
+    nomeDoHabito.push(h.nomeDoHabito);
+    percentualConclusao.push(h.percentualConclusao);
+    cor.push(h.cor);
+  });
+
+  localStorage.setItem('nomeDoHabito', JSON.stringify(nomeDoHabito));
+  localStorage.setItem('percentualConclusao', JSON.stringify(percentualConclusao));
+  localStorage.setItem('cor', JSON.stringify(cor));
+}
+
 function cadastro() {
   let nome = document.getElementById("cadNome").value
   let email = document.getElementById("cadEmail").value
@@ -29,6 +59,7 @@ function login() {
   if (usuarioEncontrado) {
     localStorage.setItem("usuarioAtual", JSON.stringify(usuarioEncontrado)) 
     alert("Login realizado com sucesso!")
+    atualizarDadosGrafico()
     window.location.href = "mainMenu.html"
   } else {
     alert("Usuário ou senha incorretos.")
