@@ -83,7 +83,7 @@ function mostrarCards(){
         <p>Descrição : ${habitos[i].descricao}</p>
         <p>Meta : ${habitos[i].meta}</p>
         <p>Notas : ${habitos[i].notas}</p>
-        <button onclick="add(${habitos[i].id})">+</button>
+        <button id="diasFeitos" onclick="add(${habitos[i].id})"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffffff" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg></button>
         <p id="${idElemento}">progresso: ${habitos[i].progresso}</p>
       </div>
     `;
@@ -107,6 +107,44 @@ function atualizarDadosGrafico() {
   localStorage.setItem('cor', JSON.stringify(cor));
 }
 
+function editar(id){
+    let habitos = gethabitosDoUserAtual()
+    const habito = habitos.find (h => h.id === id)
+
+    if(!habito){
+      alert ("Hábito não encontrado")
+      return
+    }
+
+    const novoNome = prompt("Novo nome do hábito:", habito.nomeDoHabito)
+    if(novoNome === null){
+      return
+    }
+
+    const novaDescricao = prompt("Novo descrição:", habito.descricao)
+    if(novaDescricao === null){
+      return
+    }
+
+    const novaMeta = prompt("Nova meta:", habito.meta)
+    if(novaMeta === null || isNaN(parseInt(novaMeta))) return alert("Meta inválida")
+
+    const novasNotas = prompt("Nova Nota:", habito.notas)
+    if(novasNotas === null){
+      return
+    }
+
+    habito.nomeDoHabito = novoNome
+    habito.descricao = novaDescricao
+    habito.meta = parseInt(novaMeta)
+    habito.notas = novasNotas
+    habito.percentualConclusao = (habito.progresso / habito.meta * 100)
+
+    salvarHabitoDoUserAtual(habitos)
+    mostrarCards()
+    atualizarDadosGrafico()
+}
+
 function excluir(id) {
   let habitos = gethabitosDoUserAtual()
   const confirmar = confirm("Tem certeza que deseja excluir este hábito?")
@@ -126,4 +164,3 @@ function adicionarNovoHabito() {
 // Mostrar os cards ao carregar
 mostrarCards()
 atualizarDadosGrafico()
-mostrarGraficoPessoal()
