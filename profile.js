@@ -12,14 +12,15 @@ if (!usuarioAtual){
   window.location.href = 'login.html'
 }
 
-const imagemSalva = localStorage.getItem('fotoPerfil');
+const chaveFoto = `fotoPerfil_${usuarioAtual.email.replace(/[@.]/g, '_')}`
+const imagemSalva = localStorage.getItem(chaveFoto)
+
+perfilNome.textContent = usuarioAtual.nome || 'Usuário'
+perfilEmail.textContent = usuarioAtual.email || 'Email não definfido'
+
 if (imagemSalva) {
   imgPreview.src = imagemSalva;
-}else{
-  perfilNome.textContent = usuarioAtual.nome || 'Usuário'
-  perfilEmail.textContent = usuarioAtual.email || 'Email não definfido'
 }
-
 
 inputFoto.addEventListener('change', function () {
   const arquivo = inputFoto.files[0];
@@ -29,7 +30,7 @@ inputFoto.addEventListener('change', function () {
 
     leitor.onload = function () {
       const base64 = leitor.result;
-      localStorage.setItem('fotoPerfil', base64);
+      localStorage.setItem(chaveFoto, base64);
       imgPreview.src = base64; 
     };
 
@@ -41,8 +42,6 @@ const botaoEditar = document.getElementById('iconEditar');
 botaoEditar.addEventListener('click', function () {
   inputFoto.click(); 
 });
-
-
 
 function excluirConta(){
   const confirmar = confirm("Tem certeza que deseja excluir a conta?")
@@ -56,10 +55,9 @@ function excluirConta(){
 
     const chaveHabitos = `habitos_${usuarioAtual.email.replace(/[@.]/g, '_')}`
     localStorage.removeItem(chaveHabitos)
+    localStorage.removeItem(chaveFoto)
 
     localStorage.removeItem('usuarioAtual')
-    localStorage.removeItem('fotoPerfil')
-
     alert("Conta excluída")
     window.location.href = "login.html"
   }
