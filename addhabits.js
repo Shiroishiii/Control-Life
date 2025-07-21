@@ -102,3 +102,5 @@ function voltar(){
 function telaAdicionar(){
   window.location.href = "addhabits.html"
 }
+
+//tem que dar uma olhada na parte de editar, quando você termina de editar ele na verdade cria um card novo com as informações que foram "editadas" ai fica dois cards iguais, um com o antigo e outro com o novo, tem que ver isso.
