@@ -619,17 +619,3 @@ margin-top:30px
 }
 
 
-#voltarbtn{
-    font-size: 20px;
-    border-radius: 5px;
-    justify-content: center;
-    background-color: #1b1b1b;
-    color: #fff;
-    border: 2px solid #fff;
-    padding: 8px 6px;
-    margin: 2px;
-    cursor: pointer;
-    box-shadow: 3px 3px 0 #000;
-    max-width: 100px;
-
-}

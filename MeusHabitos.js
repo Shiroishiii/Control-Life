@@ -161,9 +161,6 @@ function adicionarNovoHabito() {
   window.location.href = "addhabits.html"
 }
 
-function voltar(){
-  window.location.href = "habits.html";
-}
 // Mostrar os cards ao carregar
 mostrarCards()
 atualizarDadosGrafico()
