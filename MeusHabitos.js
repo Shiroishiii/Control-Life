@@ -56,7 +56,7 @@ function atualizarContador() {
 function mostrarCards(){
   const habitos = gethabitosDoUserAtual(); // só hábitos do usuário logado
   const container = document.getElementById("CardsContainer");
-  container.innerHTML = ''; // limpa antes
+  // container.innerHTML = ''; // limpa antes
 
   if(habitos.length === 0){
     container.innerHTML = '<p>Você ainda não tem hábitos cadastrados.</p>';
@@ -144,6 +144,7 @@ function editar(id){
     mostrarCards()
     atualizarDadosGrafico()
 }
+
 
 function excluir(id) {
   let habitos = gethabitosDoUserAtual()
