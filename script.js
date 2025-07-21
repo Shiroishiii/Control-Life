@@ -3,8 +3,8 @@ let usuarios = JSON.parse(localStorage.getItem("usuarios")) || []
 function gethabitosDoUserAtual() {
   const usuario = JSON.parse(localStorage.getItem('usuarioAtual'))
   if (!usuario) {
-    alert("Você precisa estar logado!")
-    window.location.href = 'login.html'
+    // alert("Você precisa estar logado!")
+    // window.location.href = 'login.html'
     return []
   }
 
