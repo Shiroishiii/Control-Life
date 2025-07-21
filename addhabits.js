@@ -97,6 +97,7 @@ function atualizarDadosGrafico(){
 
 function voltar(){
   window.location.href = "habits.html";
+}
   
 function telaAdicionar(){
   window.location.href = "addhabits.html"
