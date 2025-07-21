@@ -94,3 +94,12 @@ function atualizarDadosGrafico(){
 
   console.log(habitos, nomeDoHabito, percentualConclusao, cor);
 }
+
+function Adicionar(){
+  window.location.href = "addhabits.html";
+}
+
+
+function voltar(){
+  window.location.href = "habits.html";
+}
