@@ -65,3 +65,36 @@ function login() {
     alert("Usuário ou senha incorretos.")
   }
 }
+
+window.onload = function() {
+  const habitos = gethabitosDoUserAtual();
+  const container = document.getElementById("cardsNaOutraPagina");
+  // container.innerHTML = '';
+
+  if (habitos.length === 0) {
+    container.innerHTML = '<p>Você ainda não tem hábitos cadastrados.</p>';
+    return;
+  }
+
+  const usuario = JSON.parse(localStorage.getItem('usuarioAtual'));
+
+  for (let i = 0; i < habitos.length; i++) {
+    const idElemento = `${habitos[i].id}_${usuario.email.replace(/[@.]/g, '_')}`;
+
+    container.innerHTML += `
+      <div class="card">
+        <div class="flex-linha">
+          <h3>${habitos[i].nomeDoHabito}</h3>
+          <div>
+        <button id="diasFeitos" onclick="add(${habitos[i].id})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffffff" viewBox="0 0 256 256">
+            <path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path>
+          </svg>
+        </button>
+        <p id="${idElemento}">progresso: ${habitos[i].progresso}</p>
+      </div>
+    `;
+    atualizarDadosGrafico()
+  }
+}
+
