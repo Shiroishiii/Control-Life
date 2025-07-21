@@ -145,6 +145,7 @@ function editar(id){
     atualizarDadosGrafico()
 }
 
+
 function excluir(id) {
   let habitos = gethabitosDoUserAtual()
   const confirmar = confirm("Tem certeza que deseja excluir este hábito?")
