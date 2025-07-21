@@ -4,7 +4,7 @@ function gethabitosDoUserAtual() {
   const usuario = JSON.parse(localStorage.getItem('usuarioAtual'))
   if (!usuario) {
     alert("Você precisa estar logado!")
-    window.location.href = 'login.html'
+    // window.location.href = 'login.html'
     return []
   }
 
@@ -92,9 +92,10 @@ window.onload = function() {
           </svg>
         </button>
         <p id="${idElemento}">progresso: ${habitos[i].progresso}</p>
-      </div>
-    `;
-    atualizarDadosGrafico()
-  }
-}
+        </div>
+        `;
+      }
+    }
+
+atualizarDadosGrafico()
 
